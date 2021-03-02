@@ -26,12 +26,9 @@ import axios from 'axios'
         methods: {
             signUp() {
                 console.log("clieck");
-                axios.get("http://localhost:8081/auth/signup", {crossdomain: true});
-                // TODO: add a post request to http://localhost:8081/auth/signup with all inputs in body
-                //       if an error occures, set this.error to the data of the response
-                //       else log the user with :
-                //                  - this.$store.dispatch('setUser', user.data.user);
-                //                  - this.$router.push({ name: 'Home' });
+                axios.post("http://localhost:8081/auth/signup", {data}, {crossdomain: true}).then((response) => {
+                    console.log(response.data);
+                });
             }
         },
     }
